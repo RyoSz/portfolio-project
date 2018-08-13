@@ -49,9 +49,9 @@
             <h3>
                 <a href=""><u><b>{{ efg.title }}</b></u></a>
             </h3>
-            <p>{{ efg.pub_date }}</p>
+            <p>{{ efg.pub_date_pretty }}</p>
             <img class="img-fluid" src="{{ efg.image.url }}" height=200 width=200 />
-            <p>{{ efg.body }}</p>
+            <p>{{ efg.summary }} ...</p>
             {% endfor %}
         </div>
 

@@ -45,9 +45,15 @@
             <h1 class="text-center py-3">Welcome to Ryo's Blog</h1>
             <h2>Latest Posts</h2>
             <hr>
+            {% for efg in blogs.all %}
+            <h3>
+                <a href=""><u><b>{{ efg.title }}</b></u></a>
+            </h3>
+            <p>{{ efg.pub_date }}</p>
+            <img class="img-fluid" src="{{ efg.image.url }}" height=200 width=200 />
+            <p>{{ efg.body }}</p>
+            {% endfor %}
         </div>
-
-
 
     </main>
 

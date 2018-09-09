@@ -80,6 +80,63 @@
         </div>
       </div>
 
+<!-- Crypto currency data part -->
+<div class="container">
+  <div class="row">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">24H High</th>
+          <th scope="col">24H Low</th>
+          <th scope="col">Market Cap</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for key,value in price.DISPLAY.items %}
+        <tr>
+          <td>{{ key }}</td>
+          <td>{{ value.USD.PRICE }}</td>
+          <td>{{ value.USD.HIGHDAY }}</td>
+          <td>{{ value.USD.LOWDAY }}</td>
+          <td>{{ value.USD.MKTCAP }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% for key,value in price.DISPLAY.items %}
+  {{ key }} - {{ value.USD.PRICE }} <br><hr>
+{% endfor %}
+
+<br><br>
+<hr>
+
+{{ price.DISPLAY }}
+
+<!-- Crypto currency News part -->
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      {% for news in api.Data %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{{ news.guid }}">
+              <img class="card-img-top" src="{{ news.imageurl }}" />
+            </a>
+            <div class="card-body">
+              <p class="card-text">{{ news.title }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
     </main>
 
     <footer class="text-muted">
